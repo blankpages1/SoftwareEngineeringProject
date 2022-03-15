@@ -26,7 +26,7 @@ gem "jbuilder"
 
 #added based on instructions
 group :production do
-  gem 'pg', '~> 0.21' # for Heroku deployment
+  gem 'pg' # for Heroku deployment
   gem 'rails_12factor'
 end
 #---------------------------
