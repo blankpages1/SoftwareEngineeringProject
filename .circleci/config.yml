@@ -15,8 +15,8 @@ jobs:
     steps:
       - checkout
       - run: |
-          bundle install
-          bundle exec rake db:migrate RAILS_ENV=test
+          bundle install --without production
+          bundle exec rake db:migrate
           bundle exec rspec
 
 workflows:
