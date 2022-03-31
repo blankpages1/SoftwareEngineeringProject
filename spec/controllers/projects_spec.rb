@@ -9,7 +9,7 @@ RSpec.describe ProjectsController, type: :controller do
     end
   
     context "GET #show" do
-      let!(:project) { Project.create(title: "Test title", description: "Test description") }
+      let!(:project) { Project.create(title: "Test title", description: "Test description", details: "Test details") }
       it "returns a success response" do
         get :show, params: { id: project }
         expect(response).to have_http_status(200)

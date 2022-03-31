@@ -6,6 +6,7 @@ RSpec.feature "Projects", type: :feature do
       visit new_project_path
       within("form") do
         fill_in "Title", with: "Test title"
+        fill_in "Details", with: "Test details"
       end
     end
 
@@ -22,7 +23,7 @@ RSpec.feature "Projects", type: :feature do
   end
 
   context "Update project" do
-    let(:project) { Project.create(title: "Test title", description: "Test content") }
+    let(:project) { Project.create(title: "Test title", description: "Test content", details: "test details") }
     before(:each) do
       visit edit_project_path(project)
     end
@@ -45,7 +46,7 @@ RSpec.feature "Projects", type: :feature do
   end
 
   context "Remove existing project" do
-    let!(:project) { Project.create(title: "Test title", description: "Test content") }
+    let!(:project) { Project.create(title: "Test title", description: "Test content", details: "Test details") }
     scenario "remove project" do
       visit project_path(project)
       click_button "Destroy this project"
