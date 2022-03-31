@@ -5,12 +5,12 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: 'tghastings/code-esaas'
+      - image: ruby:3.0.0
     steps:
       - checkout
       - run:
           name: rspec
-          command: gpg2 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB && \curl -sSL https://get.rvm.io | bash -s stable --rails && bundle install && bundle exec rake db:migrate RAILS_ENV=test && bundle exec rspec
+          command: bash -s stable --rails && bundle install && bundle exec rake db:migrate RAILS_ENV=test && bundle exec rspec
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
