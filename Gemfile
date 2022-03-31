@@ -63,7 +63,7 @@ group :development, :test do
   gem "sqlite3", "~> 1.4"
   #----------------------
 
-  gem 'rspec-rails', '~> 3.7'
+  gem 'rspec-rails'
 end
 
 group :development do
@@ -82,4 +82,5 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
+  gem 'simplecov'
 end
