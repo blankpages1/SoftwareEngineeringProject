@@ -15,7 +15,6 @@ jobs:
     steps:
       - checkout
       - run: |
-          brew install sqlite3
           bundle install --without production
           bundle exec rake db:migrate
           bundle exec rspec
