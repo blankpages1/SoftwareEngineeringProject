@@ -84,3 +84,6 @@ group :test do
   gem "webdrivers"
   gem 'simplecov'
 end
+
+#used for authentication
+gem 'devise'
