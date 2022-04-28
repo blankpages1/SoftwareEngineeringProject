@@ -1,14 +1,18 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Projects</h1>
-
-<div id="projects">
-  <% @projects.each do |project| %>
-    <%= render project %>
-    <p>
-      <%= link_to "Show this project", project %>
-    </p>
-  <% end %>
+<div class="jumbotron text-center" style="background-color: #FFFFFF; margin: 0">
+  <h1 class="jumbotron-heading">Alan's Portfolio</h1>
+  <p class="lead text-muted">Hello! I am a computer engineering student at UCCS. I am currently a senior, and I have put together a variety of interesting projects (both for school and as a way to practice programming). Feel free to look around!</p>
 </div>
+<div style="background-color: black; height: 5px; margin: -100; padding:0"></div>
 
-<%= link_to "New project", new_project_path %>
+<div id="projects" class="container">
+  <div class="row">
+    <% @projects.each do |project| %>
+     <span class="card mb-4 box-shadow" style="padding: 10px; margin: 10px; width: 45%; min-width: 250px; max-height:50%; overflow: hidden">
+        <%= render project %>
+        <%= link_to "View Project", project, :class => "btn btn-secondary" %>
+      </span>
+    <% end %>
+  </div>
+</div>

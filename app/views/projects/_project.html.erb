@@ -1,17 +1,16 @@
-<div id="<%= dom_id project %>">
-  <p>
-    <strong>Title:</strong>
-    <%= project.title %>
-  </p>
+<div id="<%= dom_id project %>" style="margin: 5px">
+  <div style="background-color: #DBDBDB; padding: 5px; border-radius: 5px">
+    <h3 style="display: inline">
+      <%= project.title %>
+    </h3>
+    <h5 style="display: inline; font-weight: normal">
+      - <%= project.description %>
+    </h5>
+  </div>
 
-  <p>
-    <strong>Description:</strong>
-    <%= project.description %>
-  </p>
-
-  <p>
+  <div style="padding-top: 5px">
     <strong>Details:</strong>
     <%= project.details %>
-  </p>
+  </div>
 
 </div>

@@ -2,9 +2,10 @@
 
 <%= render @project %>
 
-<div>
-  <%= link_to "Edit this project", edit_project_path(@project) %> |
-  <%= link_to "Back to projects", projects_path %>
-
-  <%= button_to "Destroy this project", @project, method: :delete %>
-</div>
+<% if user_signed_in? %>
+  <div style="border-top: 5px black solid; background-color: white">
+    <div style="margin: 10px"><%= link_to "Edit this project", edit_project_path(@project), :style => "background-color: gray; border-radius: 8px; padding: 5px; color: black" %> </div>
+    <div style="margin: 10px"><%= link_to "Back to projects", projects_path, :style => "background-color: gray; border-radius: 8px; padding: 5px; color: black" %></div>
+    <div style="margin: 10px"><%= button_to "Destroy this project", @project, method: :delete, :style => "background-color: gray; border-radius: 8px" %></div>
+  </div>
+<% end %>

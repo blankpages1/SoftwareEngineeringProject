@@ -10,13 +10,19 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <% if user_signed_in? %>
-      <span><%= current_user.email %></span>
-      <%= button_to "logout", destroy_user_session_path, method: :delete  %>
-    <% else %>
-      <%= button_to "login", new_user_session_path, method: :get  %>
-    <% end %>
+  <body style="background-color: #F2F5FF">
+    <div class="navbar navbar-dark fixed-top bg-dark">
+      <% if user_signed_in? %>
+        <div>
+          <span class="nav-item"><h4 style="color: white; display: inline"><%= current_user.email %></h4></span>
+          <span class="nav-item" style="float:right; margin-left: 10px"><%= button_to "Sign Out", destroy_user_session_path, method: :delete, :style => "background-color: darkgray; border-radius: 8px" %></span>
+        </div>
+        <span class="nav-item"><%= link_to "New project", new_project_path, :style => "background-color: darkgray; border-radius: 8px; padding: 5px; color: black" %></span>
+      <% else %>
+        <span class="nav-item"><%= button_to "Sign In / Sign Up", new_user_session_path, method: :get, :style => "background-color: darkgray; border-radius: 8px"  %></span>
+      <% end %>
+      <span class="nav-item"><%= link_to "Home", projects_path, :style => "background-color: darkgray; border-radius: 8px; padding: 5px; color: black" %></span>
+    </div>
 
     <p class="alert"><%= alert %></p>
     <%= yield %>
